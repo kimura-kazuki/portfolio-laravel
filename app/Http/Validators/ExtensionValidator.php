@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright   Avithglobals Co.,Ltd. All Rights Reserved.
+ * @copyright   Knowledge Software Co.,Ltd. All Rights Reserved.
  * @since       2021/02/15
  * @author      Kazuki Kimura <kazuki.kimura@avithglobals.com>
  */

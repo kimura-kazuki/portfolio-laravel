@@ -35,20 +35,12 @@ class DashboardController extends Controller
         $canRegister = Route::has('register');
 
         $userCount = number_format($this->dashboardService->getUserCount());
-        // $receiptsBalance = number_format($this->dashboardService->getReceiptsBalance()) . '円';
-        // $orderCount = number_format($this->dashboardService->getOrderCount());
-        // $orderPendingCount = number_format($this->dashboardService->getOrderPendingCount());
-        // $adminTasksTodayDue = $this->dashboardService->getAdminTasksTodayDue();
 
         return Inertia::render('Admin/Dashboard', compact(
             'isAdmin',
             'canLogin',
             'canRegister',
             'userCount',
-            // 'receiptsBalance',
-            // 'orderCount',
-            // 'orderPendingCount',
-            // 'adminTasksTodayDue',
         ));
     }
 }
