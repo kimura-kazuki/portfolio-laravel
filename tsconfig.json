@@ -1,0 +1,33 @@
+{
+//   "extends": "@vue/tsconfig/tsconfig.web.json",
+  "compilerOptions": {
+    // TypeScript を JavaScript にコンパイルする際、どのバージョンにコンパイルするかを指定します。
+    // "target": "es5",
+    // "target": "ES2015",
+    "target": "ESNext",
+
+    // TypeScprct がコンパイルした後に、どのモジュールで管理するのかを指定します。
+    // "module": "es2015",
+    // "module": "CommonJS",
+    "module": "ESNext",
+
+    // Import 対象のソースコード・型定義ファイルをどのように検索するか
+    "moduleResolution": "NodeNext",
+
+    "strict": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "types": ["vite/client"],
+    "paths": {
+        "@/*": ["resources/js/*"]
+    },
+    "baseUrl": ".",
+  },
+  "include": [
+    // "resources/**/*.ts",
+    // "resources/**/*.d.ts",
+    // "resources/**/*.vue",
+    "resources/**/*",
+  ]
+}

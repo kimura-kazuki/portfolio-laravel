@@ -1,0 +1,52 @@
+/.phpunit.cache
+/bootstrap/ssr
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.testing
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.vscode
+
+# language files
+/lang/php_en.json
+/lang/php_ja.json
+
+# docker
+# /docker
+# docker-compose.yml
+
+# backup files
+*.swp
+*.bak
+*.back
+*.old
+
+# vscode
+/.vscode
+*.code-workspace
+
+# cache files
+.php_cs.cache
+*.DS_Store
+
+# Makefile
+Makefile
+
+# ide
+.idea/
+schema-directives.graphql
+_lighthouse_ide_helper.php
+programmatic-types.graphql
