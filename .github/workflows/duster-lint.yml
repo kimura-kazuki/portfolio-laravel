@@ -11,6 +11,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      # PHP環境のセットアップ
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2, cs2pr
+
+      - name: Composer install
+        run: composer install
+
       - name: "Duster Lint"
         uses: tighten/duster-action@v2
         with:
