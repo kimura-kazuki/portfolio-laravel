@@ -21,8 +21,6 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (auth()->guard($guard)->check()) {
-                info(auth()->user()->role_name);
-
                 $home = RouteServiceProvider::HOME;
 
                 if (auth()->check()) {
@@ -38,12 +36,9 @@ class RedirectIfAuthenticated
                         default:
                             $home = RouteServiceProvider::HOME;
                     }
-                    info($home);
 
                     return redirect($home);
                 }
-
-                info(RouteServiceProvider::HOME);
 
                 return redirect(RouteServiceProvider::HOME);
             }
