@@ -6,6 +6,5 @@ it('can see admin dashboard page', function () {
         'password' => '1234qwer',
     ]);
 
-    // config/fortify.phpの'home' => RouteServiceProvider::HOME,を参照しているので、/dashboardにリダイレクトされる。
-    $response->assertRedirect('/dashboard');
+    $response->assertRedirect('/admin');
 });

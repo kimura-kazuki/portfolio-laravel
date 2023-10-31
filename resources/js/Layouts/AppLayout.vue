@@ -10,7 +10,6 @@ import JetResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import JetBarNavigationMenu from "@/Components/JetBar/JetBarNavigationMenu.vue";
 import JetBarSidebar from "@/Components/JetBar/JetBarSidebar.vue";
 import JetBarSidebarAdmin from "@/Components/Admin/BarSidebar.vue";
-import JetBarSidebarOwner from "@/Components/Owner/BarSidebar.vue";
 import JetSectionBorder from '@/Components/SectionBorder.vue';
 import NotificationSuccess from "@/Modules/Notifications/Success.vue";
 import NotificationError from "@/Modules/Notifications/Error.vue";
@@ -51,9 +50,6 @@ const logout = () => {
                 </template>
                 <template v-else-if="$page.props.auth.user.role_name == 'Admin'">
                     <JetBarSidebarAdmin />
-                </template>
-                <template v-else-if="$page.props.auth.user.role_name == 'Owner'">
-                    <JetBarSidebarOwner />
                 </template>
                 <template v-else>
                     <JetBarSidebar />
