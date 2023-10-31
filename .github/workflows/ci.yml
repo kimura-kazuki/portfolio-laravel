@@ -23,6 +23,14 @@ jobs:
       - name: composer install
         run: docker run --rm -u "$(id -u):$(id -g)" -v $(pwd):/var/www/html -w /var/www/html laravelsail/php81-composer:latest composer install --ignore-platform-reqs
 
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: npm install
+        run: npm install
+
       # 先に起動しておく
       - name: start mysql
         run: ./vendor/bin/sail up -d mysql
