@@ -23,6 +23,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'dashboardRoute' => optional(auth()->user())->role_name == ('SystemAdmin' || 'Admin') ? 'admin.index' : 'dashboard',
     ]);
 })->name('home');
 
