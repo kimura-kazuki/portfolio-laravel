@@ -226,11 +226,11 @@ schemaspy-recreate:
 # memo for aws
 aws-mysql:
 	mysql -h awseb-e-ybfpuhjhkg-stack-awsebrdsdatabase-i6ro6cllvqtq.c5de3brr5n1w.ap-northeast-3.rds.amazonaws.com -P 3306 -u root -p
-    select * from u_seven.users where email = sekainotacchan@gmail.com;
+	select * from u_seven.users where email = sekainotacchan@gmail.com;
 aws-fresh:
 	sudo -u webapp php -d memory_limit=-1 artisan migrate:fresh --seed
 aws-migrate:
-    sudo -u webapp php -d memory_limit=-1 artisan migrate
+	sudo -u webapp php -d memory_limit=-1 artisan migrate
 aws-composer-v:
 	sudo -u webapp /usr/bin/composer.phar -v
 aws-composer-cache:
