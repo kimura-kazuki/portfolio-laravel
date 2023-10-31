@@ -30,4 +30,5 @@ jobs:
       # PHPStanを実行。解析レベルは10段階中5とし、解析対象は上で取得したファイル名リストの変数を使う
       - name: Run PHPStan
         # run: vendor/bin/phpstan analyze --memory-limit=-1 -l 5 -c vendor/nunomaduro/larastan/extension.neon ${{ steps.changed-files.outputs.all_changed_files }}
-        run: php ./vendor/bin/phpstan analyse app --level=5 --configuration="vendor/nunomaduro/larastan/extension.neon" ${{ steps.changed-files.outputs.all_changed_files }}
+        # run: php ./vendor/bin/phpstan analyse app --level=5 --configuration="vendor/nunomaduro/larastan/extension.neon" ${{ steps.changed-files.outputs.all_changed_files }}
+        run: php ./vendor/bin/phpstan analyse app --level=5 --configuration="phpstan.neon" ${{ steps.changed-files.outputs.all_changed_files }}
