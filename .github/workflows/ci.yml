@@ -36,6 +36,9 @@ jobs:
       - name: migrate
         run: ./vendor/bin/sail artisan migrate:fresh --seed
 
+      - name: build
+        run: ./vendor/bin/sail npm run build
+
       - name: test
         # run: ./vendor/bin/sail test
         run: make test
