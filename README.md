@@ -157,6 +157,23 @@ APP_KEYを生成する
 $ sail artisan key:generate --env=testing
 ```
 
+### チームで共通のGit hookを使う
+
+参考： https://www.farend.co.jp/blog/2020/04/git-hook/
+
+.githooksディレクトリをHooksのコアディレクトリに指定
+```
+$ git config --local core.hooksPath .githooks
+```
+
+### コミットメッセージ
+
+コミットメッセージには、「見出し」「チケット番号」「作業時間」を記入してください。
+
+例） Add: :construction_worker: git hooksスクリプトを追加 #1 @0.1h
+
+詳しくは .githooks/commit-msg を参照
+
 ### 各種URL
 
 - http://localhost
@@ -173,7 +190,7 @@ $ sail artisan key:generate --env=testing
 
 ## 🍺 その他コマンド
 
-基本は Makefile.example を参考に Makefile を作成してください。
+Makefileを参考にしてください。
 Makefileはあくまでメモ程度にお考えください。
 
 ### Makefileとは
