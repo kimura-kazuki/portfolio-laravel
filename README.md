@@ -2,7 +2,7 @@
 
 ## 🍀 About Portfolio Laravel
 
-Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。
+Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。<br>
 このプロジェクトは Laravel + Inertia.js + Vue.js によるモノリス且つモノレポ構成となっています。
 
 ## 📄 Design Doc
