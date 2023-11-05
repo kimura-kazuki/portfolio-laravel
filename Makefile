@@ -1,4 +1,5 @@
 SHELL=/bin/bash
+include .env
 up:
 	./vendor/bin/sail up -d
 build:
@@ -18,9 +19,11 @@ install-recommend-packages:
 	./vendor/bin/sail artisan vendor:publish --provider="BeyondCode\DumpServer\DumpServerServiceProvider"
 	./vendor/bin/sail artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 init:
-	docker-compose up -d --build
+	./vendor/bin/sail -d --build
 	./vendor/bin/sail composer install
-	docker-compose exec laravel.app cp .env.example .env
+# disable becose WWWGROUP and WWWUSER is not defined
+#	docker compose exec laravel.app cp .env.example .env.backup
+	docker exec -it portfolio-laravel-laravel.app-1 cp .env.example .env
 	./vendor/bin/sail artisan key:generate
 	./vendor/bin/sail artisan storage:link
 	./vendor/bin/sail artisan migrate:fresh --seed
