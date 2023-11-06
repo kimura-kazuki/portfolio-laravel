@@ -2,7 +2,13 @@
 
 ## git clone後
 
-[Laravel Sailで作成したプロジェクトをGitHubリポジトリにpushして利用する](https://qiita.com/kai_kou/items/bfea0281689b3d376812)
+Windows: WLS2を使用し以下のコマンドを実行してください。<br>
+MacOS: 以下のコマンドを実行してください。
+```
+$ make init
+```
+
+参考: [Laravel Sailで作成したプロジェクトをGitHubリポジトリにpushして利用する](https://qiita.com/kai_kou/items/bfea0281689b3d376812)
 
 ## 起動
 ```
