@@ -97,7 +97,7 @@ Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。
 
 ### Documents
 
-- 画面遷移図: /documents/screen-transition-diagram.plantuml
-- ER図: /documents/er-diagram.plantuml and http://localhost:8080 (SchemaSpy) （自動生成）
+- 画面遷移図: /docs/screen-transition-diagram.plantuml
+- ER図: /docs/er-diagram.plantuml and http://localhost:8080 (SchemaSpy) （自動生成）
 - API仕様書: http://localhost:8002 (SwaggerAPI) or http://localhost/docs (Scribe)（自動生成）、dedoc/scramble
-- インフラ構成図: /documents/infra.plantuml
+- インフラ構成図: /docs/infra.plantuml
