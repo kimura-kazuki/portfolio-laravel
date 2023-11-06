@@ -127,7 +127,7 @@ services:
         ports:
           - "8002:8080"
         volumes:
-          - ./documents/openapi.yaml:/openapi.yaml
+          - ./docs/openapi.yaml:/openapi.yaml
         environment:
           SWAGGER_JSON: /openapi.yaml
           # API_URL: ""
@@ -138,7 +138,7 @@ services:
         ports:
           - "8003:8000"
         volumes:
-          - ./documents/openapi.yaml:/openapi.yaml
+          - ./docs/openapi.yaml:/openapi.yaml
         command: /openapi.yaml
     schemaspy:
         build: ./docker/schemaspy

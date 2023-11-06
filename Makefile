@@ -254,7 +254,7 @@ remake-dev:
 	@make npm-dev
 	@make log-clear
 	@make clockwork-log-clear
-	zip ../laravel-dev.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "documents/*"
+	zip ../laravel-dev.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "docs/*"
 remake-staging:
 	@make cache-clear
 	@make log-clear
@@ -262,7 +262,7 @@ remake-staging:
 	@make cache
 	@make npm-refresh-dev
 	@make npm-dev
-	zip ../laravel-staging.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "documents/*"
+	zip ../laravel-staging.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "docs/*"
 remake-production:
 	@make cache-clear
 	cp -f .env.production .env
@@ -273,7 +273,7 @@ remake-production:
 	@make npm-prod
 	@make log-clear
 	@make clockwork-log-clear
-	zip ../laravel-prod.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "documents/*"
+	zip ../laravel-prod.zip -r * .[^.]* -x "vendor/*" "__MACOSX/\*" "*.DS_Store" ".schemaspy/*" ".scribe/*" "docs/*"
 
 # local env
 remake-local:

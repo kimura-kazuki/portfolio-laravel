@@ -49,9 +49,6 @@ class GoogleLoginController extends Controller
             case 'Customer':
                 $home = '/customer';
                 break;
-            case 'Advertiser':
-                $home = '/advertiser';
-                break;
             case 'Admin':
                 $home = '/admin';
                 break;
