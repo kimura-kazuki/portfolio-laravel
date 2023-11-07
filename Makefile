@@ -24,6 +24,10 @@ init:
 # disable becose WWWGROUP and WWWUSER is not defined
 #	docker compose exec laravel.app cp .env.example .env.backup
 	docker exec -it portfolio-laravel-laravel.app-1 cp .env.example .env
+	sed -e "s/DB_HOST=mysql/DB_HOST=mysql.test/" ./.env > ./.env.testing
+	sed -i.bak -e "s/APP_ENV=local/APP_ENV=testing/" ./.env.testing
+	sed -i.bak -e "s/DB_PORT=3306/DB_PORT=3306\nFORWARD_DB_PORT=3300/" ./.env.testing
+	rm -f ./.env.testing.bak
 	./vendor/bin/sail artisan key:generate
 	./vendor/bin/sail artisan storage:link
 	./vendor/bin/sail artisan migrate:fresh --seed
