@@ -271,7 +271,7 @@
             <column ascending="true" name="guard_name"/>
          </index>
       </table>
-      <table catalog="portfolio_laravel" name="sessions" numRows="5" remarks="" type="TABLE">
+      <table catalog="portfolio_laravel" name="sessions" numRows="17" remarks="" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
             <child catalog="portfolio_laravel" column="google_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="users"/>
          </column>
@@ -317,7 +317,7 @@
             <column ascending="true" name="responsible_id"/>
          </index>
       </table>
-      <table catalog="portfolio_laravel" name="telescope_entries" numRows="39" remarks="" type="TABLE">
+      <table catalog="portfolio_laravel" name="telescope_entries" numRows="101" remarks="" type="TABLE">
          <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="sequence" nullable="false" remarks="" size="20" type="BIGINT UNSIGNED" typeCode="-5"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="uuid" nullable="false" remarks="" size="36" type="CHAR" typeCode="1">
             <child catalog="portfolio_laravel" column="entry_uuid" foreignKey="telescope_entries_tags_entry_uuid_foreign" implied="false" onDeleteCascade="true" table="telescope_entries_tags"/>
