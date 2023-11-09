@@ -1,28 +1,30 @@
 <script setup>
-import { ref } from 'vue';
+// import { ref } from 'vue';
 import { useForm } from '@inertiajs/vue3';
-import { notify } from "notiwind"
+import route from 'ziggy-js';
+
+import { notify } from 'notiwind';
 
 import JetButton from '@/Jetstream/Button.vue';
 import JetFormSection from '@/Jetstream/FormSection.vue';
 import JetInput from '@/Jetstream/Input.vue';
-import JetTextarea from '@/Jetstream/Textarea.vue';
+// import JetTextarea from '@/Jetstream/Textarea.vue';
 import JetInputError from '@/Jetstream/InputError.vue';
 import JetLabel from '@/Jetstream/Label.vue';
 import JetActionMessage from '@/Jetstream/ActionMessage.vue';
-import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
-import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
-import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
+// import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
+// import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
+// import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
 
-import JetBarContainer from "@/Components/JetBar/JetBarContainer.vue";
-import JetBarAlert from "@/Components/JetBar/JetBarAlert.vue";
-import JetBarStatsContainer from "@/Components/JetBar/JetBarStatsContainer.vue";
-import JetBarStatCard from "@/Components/JetBar/JetBarStatCard.vue";
-import JetBarTable from "@/Components/JetBar/JetBarTable.vue";
-import JetBarTableData from "@/Components/JetBar/JetBarTableData.vue";
-import JetBarBadge from "@/Components/JetBar/JetBarBadge.vue";
-import JetBarIcon from "@/Components/JetBar/JetBarIcon.vue";
-import { isIntegerKey } from '@vue/shared';
+// import JetBarContainer from '@/Components/JetBar/JetBarContainer.vue';
+// import JetBarAlert from '@/Components/JetBar/JetBarAlert.vue';
+// import JetBarStatsContainer from '@/Components/JetBar/JetBarStatsContainer.vue';
+// import JetBarStatCard from '@/Components/JetBar/JetBarStatCard.vue';
+// import JetBarTable from '@/Components/JetBar/JetBarTable.vue';
+// import JetBarTableData from '@/Components/JetBar/JetBarTableData.vue';
+// import JetBarBadge from '@/Components/JetBar/JetBarBadge.vue';
+// import JetBarIcon from '@/Components/JetBar/JetBarIcon.vue';
+// import { isIntegerKey } from '@vue/shared';
 
 const props = defineProps({
     user: Object,
@@ -41,32 +43,37 @@ const editUserBankAccount = () => {
         errorBag: 'adminOwnerInformationUpdate',
         preserveScroll: true,
         onSuccess: (page) => {
-            notify({
-                group: "success",
-                title: "Success",
-                text: page.props.flash.message,
-            }, 5000);
+            notify(
+                {
+                    group: 'success',
+                    title: 'Success',
+                    text: page.props.flash.message,
+                },
+                5000,
+            );
         },
         onError: (errors) => {
-            notify({
-                group: "error",
-                title: "Error",
-                text: errors.message,
-            }, 5000);
+            notify(
+                {
+                    group: 'error',
+                    title: 'Error',
+                    text: errors.message,
+                },
+                5000,
+            );
         },
     });
 };
 </script>
 
 <template>
-    <JetFormSection @submitted="editUserBankAccount" class="mt-10 sm:mt-0">
-        <template #title>
-            オーナー情報
-        </template>
+    <JetFormSection
+        class="mt-10 sm:mt-0"
+        @submitted="editUserBankAccount"
+    >
+        <template #title> オーナー情報 </template>
 
-        <template #description>
-            オーナー情報を編集します。
-        </template>
+        <template #description> オーナー情報を編集します。 </template>
 
         <template #form>
             <!-- 獲得口数 -->
@@ -79,7 +86,10 @@ const editUserBankAccount = () => {
                     class="block w-full mt-1"
                     autocomplete="earned_number"
                 />
-                <JetInputError :message="form.errors.earned_number" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.earned_number"
+                    class="mt-2"
+                />
             </div>
 
             <!-- 獲得ポイント -->
@@ -114,12 +124,14 @@ const editUserBankAccount = () => {
                 {{ $t('Saved.') }}
             </JetActionMessage>
 
-            <JetButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <JetButton
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"
+            >
                 {{ $t('Save') }}
             </JetButton>
         </template>
     </JetFormSection>
 </template>
 
-<style>
-</style>
+<style></style>

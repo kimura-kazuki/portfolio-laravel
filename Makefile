@@ -88,6 +88,7 @@ test:
 	@make phpstan
 #	./vendor/bin/sail php ./vendor/bin/duster lint
 	./vendor/bin/sail php ./vendor/bin/duster lint --using="tlint,phpcs,php-cs-fixer"
+	./vendor/bin/sail npm run lint
 pest:
 	./vendor/bin/sail artisan config:clear
 	./vendor/bin/sail php ./vendor/bin/pest

@@ -30,7 +30,7 @@ export default {
                     src="/images/common/logo.png"
                     alt="Curva"
                 > -->
-                Knowledge SFA
+                Laravel Portfolio
             </Link>
             <!-- End App Title -->
 

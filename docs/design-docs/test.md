@@ -25,3 +25,15 @@ $ ./vendor/bin/sail artisan test
 ```
 $ ./vendor/bin/sail dusk
 ```
+
+## JavaScript静的解析 (ESlint)
+
+```
+$ ./vendor/bin/sail npm run lint
+```
+
+## JavaScriptフォーマッター (Prettier)
+
+```
+$ ./vendor/bin/sail npm run format
+```

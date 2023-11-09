@@ -1,4 +1,4 @@
-date=2023-11-07 15:28:32+0900
+date=2023-11-09 00:35:34+0900
 os=Linux 6.4.16-linuxkit
 schemaspy-version=6.2.3
 schemaspy-build=6.2.3.41 2023-06-20 20:08:51
