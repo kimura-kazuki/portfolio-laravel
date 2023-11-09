@@ -1,18 +1,20 @@
 <script setup>
-import { ref } from 'vue';
+// import { ref } from 'vue';
 import { useForm } from '@inertiajs/vue3';
-import { notify } from "notiwind";
+import route from 'ziggy'
+
+import { notify } from 'notiwind';
 
 import JetButton from '@/Jetstream/Button.vue';
 import JetFormSection from '@/Jetstream/FormSection.vue';
 import JetInput from '@/Jetstream/Input.vue';
-import JetTextarea from '@/Jetstream/Textarea.vue';
+// import JetTextarea from '@/Jetstream/Textarea.vue';
 import JetInputError from '@/Jetstream/InputError.vue';
 import JetLabel from '@/Jetstream/Label.vue';
 import JetActionMessage from '@/Jetstream/ActionMessage.vue';
-import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
-import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
-import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
+// import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
+// import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
+// import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
 
 const props = defineProps({
     user: Object,
@@ -33,34 +35,39 @@ const editUserCompany = () => {
         errorBag: 'adminUserCompanyUpdate',
         preserveScroll: true,
         onSuccess: (page) => {
-            notify({
-                group: "success",
-                title: "Success",
-                text: page.props.flash.message,
-            }, 5000);
+            notify(
+                {
+                    group: 'success',
+                    title: 'Success',
+                    text: page.props.flash.message,
+                },
+                5000,
+            );
         },
         onError: (errors) => {
             console.log(errors);
-            notify({
-                group: "error",
-                title: "Error",
-                // text: errors.message ?? errors,
-                text: "エラーが発生しました。",
-            }, 5000);
+            notify(
+                {
+                    group: 'error',
+                    title: 'Error',
+                    // text: errors.message ?? errors,
+                    text: 'エラーが発生しました。',
+                },
+                5000,
+            );
         },
     });
 };
 </script>
 
 <template>
-    <JetFormSection @submitted="editUserCompany" class="mt-10 sm:mt-0">
-        <template #title>
-            会社情報
-        </template>
+    <JetFormSection
+        class="mt-10 sm:mt-0"
+        @submitted="editUserCompany"
+    >
+        <template #title> 会社情報 </template>
 
-        <template #description>
-            会社情報を編集します。
-        </template>
+        <template #description> 会社情報を編集します。 </template>
 
         <template #form>
             <!-- 会社名 -->
@@ -73,7 +80,10 @@ const editUserCompany = () => {
                     class="block w-full mt-1"
                     autocomplete="company_name"
                 />
-                <JetInputError :message="form.errors.company_name" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.company_name"
+                    class="mt-2"
+                />
             </div>
 
             <!-- 代表者名 -->
@@ -86,7 +96,10 @@ const editUserCompany = () => {
                     class="block w-full mt-1"
                     autocomplete="representative"
                 />
-                <JetInputError :message="form.errors.representative" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.representative"
+                    class="mt-2"
+                />
             </div>
 
             <!-- 住所 -->
@@ -104,7 +117,10 @@ const editUserCompany = () => {
 
             <!-- Phone -->
             <div class="col-span-6 sm:col-span-6">
-                <JetLabel for="phone" value="電話番号（ハイフンなしで入力してください）" />
+                <JetLabel
+                    for="phone"
+                    value="電話番号（ハイフンなしで入力してください）"
+                />
                 <JetInput
                     id="phone"
                     v-model="form.phone"
@@ -121,12 +137,14 @@ const editUserCompany = () => {
                 {{ $t('Saved.') }}
             </JetActionMessage>
 
-            <JetButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <JetButton
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"
+            >
                 {{ $t('Save') }}
             </JetButton>
         </template>
     </JetFormSection>
 </template>
 
-<style>
-</style>
+<style></style>

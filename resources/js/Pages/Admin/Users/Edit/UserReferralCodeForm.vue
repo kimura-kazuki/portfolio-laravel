@@ -1,34 +1,36 @@
 <script setup>
-import { ref } from 'vue';
+// import { ref } from 'vue';
 import { useForm } from '@inertiajs/vue3';
-import { notify } from "notiwind"
+import route from 'ziggy'
 
-import JetButton from '@/Jetstream/Button.vue';
+import { notify } from 'notiwind';
+
+// import JetButton from '@/Jetstream/Button.vue';
 import JetFormSection from '@/Jetstream/FormSection.vue';
 import JetInput from '@/Jetstream/Input.vue';
-import JetTextarea from '@/Jetstream/Textarea.vue';
+// import JetTextarea from '@/Jetstream/Textarea.vue';
 import JetInputError from '@/Jetstream/InputError.vue';
 import JetLabel from '@/Jetstream/Label.vue';
-import JetActionMessage from '@/Jetstream/ActionMessage.vue';
-import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
-import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
-import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
+// import JetActionMessage from '@/Jetstream/ActionMessage.vue';
+// import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue';
+// import JetSectionBorder from '@/Jetstream/SectionBorder.vue';
+// import JetSectionBorderForm from '@/Jetstream/SectionBorderForm.vue';
 
-import JetBarContainer from "@/Components/JetBar/JetBarContainer.vue";
-import JetBarAlert from "@/Components/JetBar/JetBarAlert.vue";
-import JetBarStatsContainer from "@/Components/JetBar/JetBarStatsContainer.vue";
-import JetBarStatCard from "@/Components/JetBar/JetBarStatCard.vue";
-import JetBarTable from "@/Components/JetBar/JetBarTable.vue";
-import JetBarTableData from "@/Components/JetBar/JetBarTableData.vue";
-import JetBarBadge from "@/Components/JetBar/JetBarBadge.vue";
-import JetBarIcon from "@/Components/JetBar/JetBarIcon.vue";
-import { isIntegerKey } from '@vue/shared';
+// import JetBarContainer from '@/Components/JetBar/JetBarContainer.vue';
+// import JetBarAlert from '@/Components/JetBar/JetBarAlert.vue';
+// import JetBarStatsContainer from '@/Components/JetBar/JetBarStatsContainer.vue';
+// import JetBarStatCard from '@/Components/JetBar/JetBarStatCard.vue';
+// import JetBarTable from '@/Components/JetBar/JetBarTable.vue';
+// import JetBarTableData from '@/Components/JetBar/JetBarTableData.vue';
+// import JetBarBadge from '@/Components/JetBar/JetBarBadge.vue';
+// import JetBarIcon from '@/Components/JetBar/JetBarIcon.vue';
+// import { isIntegerKey } from '@vue/shared';
 
 const props = defineProps({
     user: Object,
     userReferralCode: String,
     customerUserQrCodeUrl: String,
-    advertiserUserQrCodeUrl: String|null,
+    advertiserUserQrCodeUrl: String,
 });
 
 const form = useForm({
@@ -43,11 +45,14 @@ const editUserReferralCode = () => {
         errorBag: 'adminUserReferralCodeUpdate',
         preserveScroll: true,
         onSuccess: (page) => {
-            notify({
-                group: "success",
-                title: "Success",
-                text: page.props.flash.message,
-            }, 5000);
+            notify(
+                {
+                    group: 'success',
+                    title: 'Success',
+                    text: page.props.flash.message,
+                },
+                5000,
+            );
         },
         onError: (errors) => {
             console.log('error');
@@ -58,10 +63,11 @@ const editUserReferralCode = () => {
 </script>
 
 <template>
-    <JetFormSection @submitted="editUserReferralCode" class="mt-10 sm:mt-0">
-        <template #title>
-            紹介コード
-        </template>
+    <JetFormSection
+        class="mt-10 sm:mt-0"
+        @submitted="editUserReferralCode"
+    >
+        <template #title> 紹介コード </template>
 
         <template #description>
             紹介コードを閲覧します。編集不可です。
@@ -79,7 +85,10 @@ const editUserReferralCode = () => {
                     autocomplete="user_referral_code"
                     readonly="readonly"
                 />
-                <JetInputError :message="form.errors.user_referral_code" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.user_referral_code"
+                    class="mt-2"
+                />
             </div>
 
             <!-- 無料会員紹介URL -->
@@ -94,7 +103,10 @@ const editUserReferralCode = () => {
                     readonly="readonly"
                 />
                 <img :src="customerUserQrCodeUrl" />
-                <JetInputError :message="form.errors.user_referral_code" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.user_referral_code"
+                    class="mt-2"
+                />
             </div>
 
             <!-- 加盟店紹介URL -->
@@ -109,7 +121,10 @@ const editUserReferralCode = () => {
                     readonly="readonly"
                 />
                 <img :src="advertiserUserQrCodeUrl" />
-                <JetInputError :message="form.errors.user_referral_code" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.user_referral_code"
+                    class="mt-2"
+                />
             </div>
 
             <!-- QRコード -->
@@ -131,5 +146,4 @@ const editUserReferralCode = () => {
     </JetFormSection>
 </template>
 
-<style>
-</style>
+<style></style>

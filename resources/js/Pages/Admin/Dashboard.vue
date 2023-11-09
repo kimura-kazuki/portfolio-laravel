@@ -1,18 +1,18 @@
 <script setup>
-import { Head, Link, router } from '@inertiajs/vue3';
+// import { Head, Link, router } from '@inertiajs/vue3';
 
 import AppLayout from '@/Layouts/AppLayout.vue';
 
-import JetBarContainer from "@/Components/JetBar/JetBarContainer.vue";
-import JetBarAlert from "@/Components/JetBar/JetBarAlert.vue";
-import JetBarStatsContainer from "@/Components/JetBar/JetBarStatsContainer.vue";
-import JetBarStatCard from "@/Components/JetBar/JetBarStatCard.vue";
-import JetBarTable from "@/Components/JetBar/JetBarTable.vue";
-import JetBarTableData from "@/Components/JetBar/JetBarTableData.vue";
-import JetBarBadge from "@/Components/JetBar/JetBarBadge.vue";
-import JetBarIcon from "@/Components/JetBar/JetBarIcon.vue";
+import JetBarContainer from '@/Components/JetBar/JetBarContainer.vue';
+import JetBarAlert from '@/Components/JetBar/JetBarAlert.vue';
+import JetBarStatsContainer from '@/Components/JetBar/JetBarStatsContainer.vue';
+import JetBarStatCard from '@/Components/JetBar/JetBarStatCard.vue';
+// import JetBarTable from '@/Components/JetBar/JetBarTable.vue';
+// import JetBarTableData from '@/Components/JetBar/JetBarTableData.vue';
+// import JetBarBadge from '@/Components/JetBar/JetBarBadge.vue';
+import JetBarIcon from '@/Components/JetBar/JetBarIcon.vue';
 
-const props = defineProps({
+defineProps({
     userCount: Number,
     // receiptsBalance: Number,
     // orderCount: Number,
@@ -27,35 +27,44 @@ const props = defineProps({
     <Head title="ダッシュボード" />
 
     <AppLayout>
-        <template #header>
-            ダッシュボード
-        </template>
+        <template #header> ダッシュボード </template>
 
         <jet-bar-container>
-
             <JetBarAlert :text="$page.props.flash.message" />
 
             <jet-bar-stats-container>
-                <jet-bar-stat-card title="総ユーザー数" :number="userCount" type="warning">
-                    <template v-slot:icon>
+                <jet-bar-stat-card
+                    title="総ユーザー数"
+                    :number="userCount"
+                    type="warning"
+                >
+                    <template #icon>
                         <jet-bar-icon type="users" fill />
                     </template>
                 </jet-bar-stat-card>
 
-                <jet-bar-stat-card title="「加盟料入金額」の総合計" number="0" type="success">
-                    <template v-slot:icon>
+                <jet-bar-stat-card
+                    title="「加盟料入金額」の総合計"
+                    number="0"
+                    type="success"
+                >
+                    <template #icon>
                         <jet-bar-icon type="money" fill />
                     </template>
                 </jet-bar-stat-card>
 
                 <jet-bar-stat-card title="全受注数" number="0" type="info">
-                    <template v-slot:icon>
+                    <template #icon>
                         <jet-bar-icon type="cart" fill />
                     </template>
                 </jet-bar-stat-card>
 
-                <jet-bar-stat-card title="未完了の受注" number="0" type="danger">
-                    <template v-slot:icon>
+                <jet-bar-stat-card
+                    title="未完了の受注"
+                    number="0"
+                    type="danger"
+                >
+                    <template #icon>
                         <jet-bar-icon type="message" fill />
                     </template>
                 </jet-bar-stat-card>
@@ -82,8 +91,6 @@ const props = defineProps({
                     </jet-bar-table-data>
                 </tr>
             </jet-bar-table> -->
-
         </jet-bar-container>
-
     </AppLayout>
 </template>

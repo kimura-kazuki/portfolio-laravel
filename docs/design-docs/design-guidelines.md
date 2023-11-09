@@ -18,5 +18,9 @@
 
 ## フロントエンド
 
+### コーディング規約
+
+- Vue.js - インデントはスペース4つ (Laravelインストール時の.vueファイルがスペース4つのため)
+
 - [【React/Vue.js】コンポーネント設計の（個人的）ベストプラクティス | Offers Tech Blog](https://zenn.dev/offers/articles/20220523-component-design-best-practice)
 - [フロントエンドのコンポーネント設計において参考になる記事まとめ](https://zenn.dev/toshiyuki/articles/ea9fabc073ea0c)

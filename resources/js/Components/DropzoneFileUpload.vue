@@ -50,7 +50,7 @@ import Dropzone from 'dropzone';
 import { notify } from "notiwind";
 
   export default {
-    name: 'dropzone-file-upload',
+    name: 'DropzoneFileUpload',
     props: {
       options: {
         type: Object,

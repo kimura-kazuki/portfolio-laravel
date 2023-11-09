@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+// import { ref } from 'vue';
 import { useForm } from '@inertiajs/vue3';
+import route from 'ziggy'
 
 import JetButton from '@/Jetstream/Button.vue';
 import JetFormSection from '@/Jetstream/FormSection.vue';
@@ -33,31 +34,37 @@ const editUserIsApproved = () => {
 </script>
 
 <template>
-    <JetFormSection @submitted="editUserIsApproved" class="mt-10 sm:mt-0">
-        <template #title>
-            申請手続き
-        </template>
+    <JetFormSection
+        class="mt-10 sm:mt-0"
+        @submitted="editUserIsApproved"
+    >
+        <template #title> 申請手続き </template>
 
-        <template #description>
-            アカウントの申請手続きをします。
-        </template>
+        <template #description> アカウントの申請手続きをします。 </template>
 
         <template #form>
             <!-- 承認フラグ -->
             <div class="col-span-6 sm:col-span-4">
                 <JetLabel for="is_approved" value="承認フラグ" />
                 <select
-                    v-model="form.is_approved"
                     id="is_approved"
+                    v-model="form.is_approved"
                     class="w-full max-w-xs mt-1 select select-bordered"
                     @keypress.enter.prevent
                 >
                     <option selected>選択して下さい</option>
-                    <option v-for="isApprovedOption in isApprovedOptions" :value="isApprovedOption.value">
+                    <option
+                        v-for="isApprovedOption in isApprovedOptions"
+                        :key="isApprovedOption.value"
+                        :value="isApprovedOption.value"
+                    >
                         {{ isApprovedOption.name }}
                     </option>
                 </select>
-                <JetInputError :message="form.errors.is_approved" class="mt-2" />
+                <JetInputError
+                    :message="form.errors.is_approved"
+                    class="mt-2"
+                />
             </div>
         </template>
 
@@ -66,12 +73,14 @@ const editUserIsApproved = () => {
                 {{ $t('Saved.') }}
             </JetActionMessage>
 
-            <JetButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <JetButton
+                :class="{ 'opacity-25': form.processing }"
+                :disabled="form.processing"
+            >
                 {{ $t('Save') }}
             </JetButton>
         </template>
     </JetFormSection>
 </template>
 
-<style>
-</style>
+<style></style>
