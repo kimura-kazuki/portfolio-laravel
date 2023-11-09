@@ -31,7 +31,7 @@ Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。
 
 ### テスト・解析
 
-- 静的解析(Laravel Pint, phpcs, PHPMD, php intelephense, PHPStan(Larastan), tightenco/duster)
+- 静的解析(Laravel Pint, phpcs, PHPMD, php intelephense, PHPStan(Larastan), tightenco/duster, ESLint, Prettier)
 - バックエンド単体・統合テスト(Pest)
 - フロントエンド単体・統合テスト(Pest)
 - ブラウザテスト(Selenium, Laravel Dusk, Pest)
