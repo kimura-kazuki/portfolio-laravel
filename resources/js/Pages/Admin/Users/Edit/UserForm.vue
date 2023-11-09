@@ -2,7 +2,7 @@
 // import { ref } from 'vue';
 // import { Head, Link, router, useForm } from '@inertiajs/vue3';
 import { Link, useForm } from '@inertiajs/vue3';
-import route from 'ziggy'
+import route from 'ziggy-js';
 
 import { notify } from 'notiwind';
 

@@ -1,6 +1,6 @@
 <script setup>
 // import { Head, Link, router } from '@inertiajs/vue3';
-import route from 'ziggy'
+import route from 'ziggy-js';
 
 import axios from 'axios';
 import Swal from 'sweetalert2';

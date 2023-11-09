@@ -2,7 +2,7 @@
 // import { ref, computed, useSlots } from 'vue';
 import { computed, useSlots } from 'vue';
 // import { router } from '@inertiajs/vue3';
-// import route from 'ziggy'
+// iimport route from 'ziggy-js'
 import JetBanner from '@/Components/Banner.vue';
 import JetBarNavigationMenu from '@/Components/JetBar/JetBarNavigationMenu.vue';
 import JetBarSidebar from '@/Components/JetBar/JetBarSidebar.vue';

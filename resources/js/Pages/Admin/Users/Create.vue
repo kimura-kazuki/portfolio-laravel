@@ -1,7 +1,7 @@
 <script setup>
 // import { Head, Link, router } from '@inertiajs/vue3';
 import { useForm } from 'laravel-precognition-vue-inertia';
-import route from 'ziggy'
+import route from 'ziggy-js';
 
 import { notify } from 'notiwind';
 

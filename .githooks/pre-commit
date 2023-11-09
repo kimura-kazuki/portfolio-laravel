@@ -5,7 +5,7 @@
   https://opensource.org/licenses/mit-license.php
 COMMENT
 
-php_target_files=`git diff --cached --name-only | grep .php`
+php_target_files=`git diff --cached --name-only | docker exec -it portfolio-laravel-laravel.app-1 grep .php`
 js_target_files=`git diff --cached --name-only | grep ".js\|.vue\|.jsx\|.tsx\|.ts\|.json\|.html\|.twig"`
 phpcs=`./vendor/bin/sail composer global config bin-dir --absolute 2> /dev/null`/phpcs
 phpstan=`./vendor/bin/sail composer global config bin-dir --absolute 2> /dev/null`/phpstan
@@ -41,7 +41,7 @@ if [ -z "$js_target_files" ]; then
     echo "[eslint] js/json files not found." >> $output 2>&1
 else
     echo "[eslint] running..." >> $output 2>&1
-    docker exec -it portfolio-laravel-laravel.app-1 ./node_modules/.bin/eslint $js_target_files >> $output 2>&1
+    ./vendor/bin/sail npm run lint $js_target_files >> $output 2>&1
 fi
 
 # If there are no PHP files, exit
