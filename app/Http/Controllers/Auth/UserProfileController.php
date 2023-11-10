@@ -63,7 +63,7 @@ class UserProfileController extends Controller
 
             // $validatedData = [
             //      ...$validatedData,
-            //     'user_id' => \auth()->id(),
+            //     'user_id' => auth()->id(),
             // ];
         } catch (\Throwable $e) {
             logs()->error($e->getMessage());
