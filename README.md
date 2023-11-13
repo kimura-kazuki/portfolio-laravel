@@ -93,11 +93,11 @@ Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。
 - ソーシャルログイン(Laravel Socialite)
 - 入れ子集合モデル（lazychaser/laravel-nestedset）
 - ロールベースアクセス制御(RBAC)（laravel-permission）
-- APIドキュメント（knuckleswtf/scribe）
+- APIドキュメント（knuckleswtf/scribe, dedoc/scramble）
 
 ### Documents
 
 - 画面遷移図: /docs/screen-transition-diagram.plantuml
 - ER図: /docs/er-diagram.plantuml and http://localhost:8080 (SchemaSpy) （自動生成）
-- API仕様書: http://localhost:8002 (SwaggerAPI) or http://localhost/docs (Scribe)（自動生成）、dedoc/scramble
+- API仕様書: http://localhost:8002 (SwaggerAPI) or http://localhost/docs (Scribe, dedoc/scramble)（自動生成）
 - インフラ構成図: /docs/infra.plantuml
