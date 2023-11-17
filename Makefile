@@ -81,7 +81,7 @@ pint-test:
 	./vendor/bin/sail php ./vendor/bin/pint --test -v
 test:
 	./vendor/bin/sail artisan config:clear
-#./vendor/bin/sail artisan migrate:fresh --seed
+	./vendor/bin/sail artisan migrate:fresh --seed --env=testing
 #./vendor/bin/sail artisan test --env=testing
 	./vendor/bin/sail artisan test
 	@make pest
