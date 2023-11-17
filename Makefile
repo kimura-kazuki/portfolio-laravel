@@ -31,6 +31,7 @@ init:
 	./vendor/bin/sail artisan key:generate
 	./vendor/bin/sail artisan storage:link
 	./vendor/bin/sail artisan migrate:fresh --seed
+	git config --local core.hooksPath .githooks
 remake:
 	@make destroy
 	@make init
@@ -80,7 +81,7 @@ pint-test:
 	./vendor/bin/sail php ./vendor/bin/pint --test -v
 test:
 	./vendor/bin/sail artisan config:clear
-#./vendor/bin/sail artisan migrate:fresh --seed
+	./vendor/bin/sail artisan migrate:fresh --seed --env=testing
 #./vendor/bin/sail artisan test --env=testing
 	./vendor/bin/sail artisan test
 	@make pest
@@ -101,6 +102,9 @@ phpstan:
 	./vendor/bin/sail php ./vendor/bin/phpstan analyse -c phpstan.neon
 duster-fix:
 	./vendor/bin/sail php ./vendor/bin/duster fix
+
+vue-format:
+	./vendor/bin/sail npm run format
 
 # php artisan optimize is
 # do php artisan config:cache
@@ -231,9 +235,12 @@ scribe-generate:
 schemaspy-recreate:
 	./vendor/bin/sail up schemaspy
 
+act:
+	act pull_request --container-architecture linux/amd64
+
 # memo for aws
 aws-mysql:
-	mysql -h awseb-e-ybfpuhjhkg-stack-awsebrdsdatabase-i6ro6cllvqtq.c5de3brr5n1w.ap-northeast-3.rds.amazonaws.com -P 3306 -u root -p
+	mysql -h ***.rds.amazonaws.com -P 3306 -u root -p
 	select * from u_seven.users where email = sekainotacchan@gmail.com;
 aws-fresh:
 	sudo -u webapp php -d memory_limit=-1 artisan migrate:fresh --seed
