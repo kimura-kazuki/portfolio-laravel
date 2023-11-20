@@ -38,7 +38,7 @@ Porfolio Laravelはポートフォリオ用のLaravelプロジェクトです。
 - CI/CD(Git hooks, GitHub Actions)
 - API スキーマ定義(OpenAPI, Swagger, Laravel API Documentation Generator, Scribe)
 - UI 検証(StoryBook & Chromatic - StoryBookホスティングサービス)
-- 負荷テスト(Taurus)
+- 負荷テスト(Taurus, Stressless(Pest Plugin))
 - プロファイリング（Laravel XHProf）
 - N+1チェック（Laravel preventLazyLoading function）
 - ログビューワ（opcodesio/log-viewer）
